@@ -38,6 +38,7 @@
 
             <div class="card">
                 <h2>Control GPIO 2</h2>
+                <h3>Control GPIO 0</h3>
                 <button id="onButton" class="onButton">ON</button>
                 <button id="offButton" class="offButton">OFF</button>
                 <p class="gray-label">Last value sent: <span id="valueSent"></span></p>
@@ -82,6 +83,12 @@
     disconnectButton.addEventListener('click', disconnectDevice);
 
     // Write to the ESP32 LED Characteristic
+    onButton.addEventListener('click', () => writeOnCharacteristic(1));
+    offButton.addEventListener('click', () => writeOnCharacteristic(0));
+  // Write to the ESP32 motor forward Characteristic
+    onButton.addEventListener('click', () => writeOnCharacteristic(1));
+    offButton.addEventListener('click', () => writeOnCharacteristic(0));
+  // Write to the ESP32 motor revers Characteristic
     onButton.addEventListener('click', () => writeOnCharacteristic(1));
     offButton.addEventListener('click', () => writeOnCharacteristic(0));
 
